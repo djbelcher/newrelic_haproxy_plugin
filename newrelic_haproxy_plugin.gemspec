@@ -12,35 +12,30 @@ Gem::Specification.new do |s|
   ## Leave these as is they will be modified for you by the rake gemspec task.
   ## If your rubyforge_project name is different, then edit it and comment out
   ## the sub! line in the Rakefile
-  s.name              = 'newrelic_haproxy_agent'
-  s.version           = '1.0.1'
-  s.date              = '2013-07-13'
-  # s.rubyforge_project = 'newrelic_haproxy_agent'
+  s.name              = 'newrelic_haproxy_plugin'
+  s.version           = '1.0.0'
+  s.date              = '2017-03-23'
 
   ## Make sure your summary is short. The description may be as long
   ## as you like.
-  s.summary     = "New Relic Haproxy monitoring plugin"
+  s.summary     = "New Relic Haproxy Plugin"
   s.description = <<-EOF
-This is the New Relic plugin for monitoring Haproxy developed by Railsware Inc.
+This is a New Relic plugin for monitoring Haproxy developed by Godaddy.com.
   EOF
 
   ## List the primary authors. If there are a bunch of authors, it's probably
   ## better to set the email to an email list or something. If you don't have
   ## a custom homepage, consider using your GitHub URL or the like.
-  s.authors  = ["Maxim Bondaruk"]
-  s.email    = 'maxim.bondaruk@railsware.com'
-  s.homepage = 'https://github.com/railsware/newrelic_platform_plugins/tree/master/newrelic_haproxy_agent'
+  s.authors  = ["Darrick Belcher"]
+  s.email    = 'dbelcher@godaddy.com'
+  s.homepage = 'https://github.secureserver.net/KnowledgeServices/newrelic_haproxy_plugin'
 
   ## This gets added to the $LOAD_PATH so that 'lib/NAME.rb' can be required as
   ## require 'NAME.rb' or'/lib/NAME/file.rb' can be as require 'NAME/file.rb'
   s.require_paths = %w[lib]
 
-  ## This sections is only necessary if you have C extensions.
-  #s.require_paths << 'ext'
-  #s.extensions = %w[ext/extconf.rb]
-
   ## If your gem includes any executables, list them here.
-  s.executables = ["newrelic_haproxy_agent"]
+  s.executables = ["newrelic_haproxy_plugin"]
 
   ## Specify any RDoc options here. You'll want to add your README and
   ## LICENSE files to the extra_rdoc_files list.
@@ -49,15 +44,14 @@ This is the New Relic plugin for monitoring Haproxy developed by Railsware Inc.
 
   ## List your runtime dependencies here. Runtime dependencies are those
   ## that are needed for an end user to actually USE your code.  
-  s.add_dependency('newrelic_plugin', "1.0.3")
-  s.add_dependency('fastercsv', ">= 1.5.5") if RUBY_VERSION < "1.9"
-
+  s.add_dependency('newrelic_plugin', "1.3.1")
 
   s.post_install_message = <<-EOF
-  To get started with this plugin, do
-    newrelic_haproxy_agent -h
-  to find out how to install and run the plugin agent.
-    EOF
+  To get started with this plugin, execute:
+
+      newrelic_haproxy_plugin -h
+
+  EOF
 
   ## Leave this section as-is. It will be automatically generated from the
   ## contents of your Git repository via the gemspec task. DO NOT REMOVE
@@ -67,10 +61,11 @@ This is the New Relic plugin for monitoring Haproxy developed by Railsware Inc.
     Gemfile
     README.md
     Rakefile
-    bin/newrelic_haproxy_agent
-    config/newrelic_plugin.yml.example
-    lib/newrelic_haproxy_agent.rb
-    newrelic_haproxy_agent.gemspec
+    bin/newrelic_haproxy_plugin
+    config/newrelic_haproxy_plugin.yml
+    lib/delta_counter.rb
+    lib/plugin_agent.rb
+    newrelic_haproxy_plugin.gemspec
   ]
   # = MANIFEST =
 

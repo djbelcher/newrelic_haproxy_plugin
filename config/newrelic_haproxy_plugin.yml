@@ -7,21 +7,26 @@
 #
 #
 newrelic:
+  endpoint: 'http://platform-api.newrelic.com'
+
   #
   # Update with your New Relic account license key:
   #
   license_key: 'YOUR_LICENSE_KEY_HERE'
+
   #
   # Set to '1' for verbose output, remove for normal output.
   # All output goes to stdout/stderr.
   #
   verbose: 0
+
 #
 # Agent Configuration:
 #
 agents:
   my_haproxy_1:
-    # URI of the haproxy CSV stats url. See the 'CSV Export' link on your haproxy stats page (example stats page: http://demo.1wt.eu/).
+    name: my_haproxy_1
+    # URI (or comman delimited list) of haproxy CSV stats url(s). See the 'CSV Export' link on your haproxy stats page (example stats page: http://demo.1wt.eu/).
     uri: http://demo.1wt.eu/;csv
     # The name of the proxy to monitor. Proxies are typically listed in the haproxy.cfg file.
     proxy: http-in
@@ -31,8 +36,10 @@ agents:
     user:
     # If protected under basic authentication provide the password.
     password:
+
   my_haproxy_2:
-    # URI of the haproxy CSV stats url. See the 'CSV Export' link on your haproxy stats page (example stats page: http://demo.1wt.eu/).
+    name: my_haproxy_2
+    # URI (or comman delimited list) of haproxy CSV stats url(s). See the 'CSV Export' link on your haproxy stats page (example stats page: http://demo.1wt.eu/).
     uri: http://demo.1wt.eu/;csv
     # The name of the proxy to monitor. Proxies are typically listed in the haproxy.cfg file.
     proxy: www
